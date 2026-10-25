@@ -1,5 +1,5 @@
 mod actor;
-mod handler;
+mod handle;
 mod message;
 
-pub use handler::CounterHandle;
+pub use handle::CounterHandle;
