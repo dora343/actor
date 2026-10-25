@@ -1,11 +1,11 @@
 use crate::{actor::Actor, counter::message::CounterMessage};
 
 
-pub(super) struct Counter {
+pub(super) struct CounterActor {
     count: u32,
 }
 
-impl Counter {
+impl CounterActor {
     pub fn new() -> Self {
         Self { count: 0 }
     }
@@ -23,7 +23,7 @@ impl Counter {
     }
 }
 
-impl Actor for Counter {
+impl Actor for CounterActor {
     type Message = CounterMessage;
 
     fn handle_message(&mut self, msg: Self::Message) {

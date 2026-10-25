@@ -1,4 +1,4 @@
-use super::actor::Counter;
+use super::actor::CounterActor;
 use crate::actor::Actor;
 use crate::counter::message::CounterMessage;
 use tokio::sync::mpsc;
@@ -6,14 +6,14 @@ use tokio::sync::oneshot;
 
 
 #[derive(Clone)]
-pub struct CounterHandler {
+pub struct CounterHandle {
     sender: mpsc::Sender<CounterMessage>,
 }
 
-impl CounterHandler {
+impl CounterHandle {
     pub fn new() -> Self {
         let (sender, receiver) = mpsc::channel(8);
-        let actor = Counter::new();
+        let actor = CounterActor::new();
         std::thread::spawn(move || actor.run(receiver));
         Self { sender }
     }

@@ -1,4 +1,4 @@
-use crate::counter::CounterHandler;
+use crate::counter::CounterHandle;
 
 mod actor;
 mod counter;
@@ -7,7 +7,7 @@ mod counter;
 async fn main() {
     println!("Hello world");
 
-    let counter1 = CounterHandler::new();
+    let counter1 = CounterHandle::new();
 
     let mut current_count = counter1.get_count().await;
     println!("Current count: {}", current_count);
