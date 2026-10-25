@@ -1,6 +1,5 @@
 use crate::{actor::Actor, counter::message::CounterMessage};
 
-
 pub(super) struct CounterActor {
     count: u32,
 }

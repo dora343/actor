@@ -4,7 +4,6 @@ use crate::counter::message::CounterMessage;
 use tokio::sync::mpsc;
 use tokio::sync::oneshot;
 
-
 #[derive(Clone)]
 pub struct CounterHandle {
     sender: mpsc::Sender<CounterMessage>,
